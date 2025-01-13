@@ -26,4 +26,5 @@ A més, inclou una **interfície gràfica** per realitzar les operacions de mane
 ## Exemple de funcionalitat
 
 1. Executar el codi:
-   ```python3 nom_del_fitxer.py
+   ```bash
+   python3 RSA.py
