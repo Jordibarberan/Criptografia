@@ -1,0 +1,292 @@
+[
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "randprime",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "randprime",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "gcd",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "generate_rsa_parameters",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def generate_rsa_parameters():\n    p = randprime(10**5, 10**6)\n    q = randprime(10**5, 10**6)\n    n = p * q\n    zero = (p - 1) * (q - 1)\n    e = 65537\n    d = mod_inverse(e, zero)\n    return p, q, n, zero, e, d\n# Ús de l'algoritme Euclidean i mòdul invers\ndef extended_gcd(a, b):",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "extended_gcd",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def extended_gcd(a, b):\n    if b == 0:\n        return a, 1, 0\n    gcd, x1, y1 = extended_gcd(b, a % b)\n    x = y1\n    y = x1 - (a // b) * y1\n    return gcd, x, y\ndef mod_inverse(e, zero):\n    gcd, x, y = extended_gcd(e, zero)\n    if gcd != 1:",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "mod_inverse",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def mod_inverse(e, zero):\n    gcd, x, y = extended_gcd(e, zero)\n    if gcd != 1:\n        raise ValueError(\"No existe inverso multiplicativo\")\n    else:\n        return x % zero\n# Funcions d'encriptació i desnecriptació\ndef encrypt(text, e, n):\n    return [pow(ord(char), e, n) for char in text]\ndef decrypt(text, d, n):",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def encrypt(text, e, n):\n    return [pow(ord(char), e, n) for char in text]\ndef decrypt(text, d, n):\n    return ''.join([chr(pow(char, d, n)) for char in text])\n# Funcions GUI per encriptació\ndef abrir_ventana_encriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def decrypt(text, d, n):\n    return ''.join([chr(pow(char, d, n)) for char in text])\n# Funcions GUI per encriptació\ndef abrir_ventana_encriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")\n            guardar_como_bajada(archivo)\n        else:",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "abrir_ventana_encriptado",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def abrir_ventana_encriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")\n            guardar_como_bajada(archivo)\n        else:\n            messagebox.showwarning(\"Advertencia\", \"No se seleccionó ningún archivo.\")\n    def guardar_como_bajada(ruta_original):\n        try:",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "abrir_ventana_desencriptado",
+        "kind": 2,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "def abrir_ventana_desencriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")\n            guardar_como_bajada(archivo)\n        else:\n            messagebox.showwarning(\"Advertencia\", \"No se seleccionó ningún archivo.\")\n    def guardar_como_bajada(ruta_original):\n        try:",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "root = tk.Tk()\nroot.title(\"Menú de Encriptación\")\nroot.geometry(\"600x400\")\nlabel = tk.Label(root, text=\"Escoja una opcion\", font=(\"Arial\", 18), fg=\"black\")\nlabel.pack(pady=20)\nencriptado = True\nencrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\nencriptado = False\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "label",
+        "kind": 5,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "label = tk.Label(root, text=\"Escoja una opcion\", font=(\"Arial\", 18), fg=\"black\")\nlabel.pack(pady=20)\nencriptado = True\nencrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\nencriptado = False\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()\n# -*- coding: utf-8 -*-",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "encriptado",
+        "kind": 5,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "encriptado = True\nencrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\nencriptado = False\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()\n# -*- coding: utf-8 -*-",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_button",
+        "kind": 5,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "encrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\nencriptado = False\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()\n# -*- coding: utf-8 -*-",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "encriptado",
+        "kind": 5,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "encriptado = False\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()\n# -*- coding: utf-8 -*-",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt_button",
+        "kind": 5,
+        "importPath": "entrornoGrafico",
+        "description": "entrornoGrafico",
+        "peekOfCode": "decrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()\n# -*- coding: utf-8 -*-",
+        "detail": "entrornoGrafico",
+        "documentation": {}
+    },
+    {
+        "label": "generate_rsa_parameters",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def generate_rsa_parameters():\n    p = randprime(10**5, 10**6)\n    q = randprime(10**5, 10**6)\n    n = p * q\n    phi = (p - 1) * (q - 1)\n    # Valors comuns de la clau pública\n    common_e_values = [3, 5, 17, 257, 65537]\n    # Seleccionar un valor de la clau pública dels valors comuns\n    e = random.choice(common_e_values)\n    while gcd(e, phi) != 1:",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "extended_gcd",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def extended_gcd(a, b):\n    if b == 0:\n        return a, 1, 0\n    gcd, x1, y1 = extended_gcd(b, a % b)\n    x = y1\n    y = x1 - (a // b) * y1\n    return gcd, x, y \ndef mod_inverse(e, phi):\n    gcd, x, y = extended_gcd(e, phi)\n    if gcd != 1:",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "mod_inverse",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def mod_inverse(e, phi):\n    gcd, x, y = extended_gcd(e, phi)\n    if gcd != 1:\n        raise ValueError(\"No multiplicative inverse exists\")\n    else:\n        return x % phi\n# Funcions d'encriptació i desencriptació\ndef encrypt(text, e, n):\n    return [pow(ord(char), e, n) for char in text]\ndef decrypt(cipher, d, n):",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def encrypt(text, e, n):\n    return [pow(ord(char), e, n) for char in text]\ndef decrypt(cipher, d, n):\n    return ''.join([chr(pow(char, d, n)) for char in cipher])\n# Funcions GUI per enrcriptar\ndef abrir_ventana_encriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def decrypt(cipher, d, n):\n    return ''.join([chr(pow(char, d, n)) for char in cipher])\n# Funcions GUI per enrcriptar\ndef abrir_ventana_encriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")\n            guardar_como_bajada(archivo)\n        else:",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "abrir_ventana_encriptado",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def abrir_ventana_encriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")\n            guardar_como_bajada(archivo)\n        else:\n            messagebox.showwarning(\"Advertencia\", \"No se seleccionó ningún archivo.\")\n    def guardar_como_bajada(ruta_original):\n        try:",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "abrir_ventana_desencriptado",
+        "kind": 2,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "def abrir_ventana_desencriptado():\n    def cargar_archivo():\n        archivo = filedialog.askopenfilename(title=\"Seleccionar archivo\")\n        if archivo:\n            archivo_label.config(text=f\"Archivo seleccionado: {archivo}\")\n            guardar_como_bajada(archivo)\n        else:\n            messagebox.showwarning(\"Advertencia\", \"No se seleccionó ningún archivo.\")\n    def guardar_como_bajada(ruta_original):\n        try:",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "root = tk.Tk()\nroot.title(\"Menú de Encriptación\")\nroot.geometry(\"600x400\")\nlabel = tk.Label(root, text=\"Escoja una opcion\", font=(\"Arial\", 18), fg=\"black\")\nlabel.pack(pady=20)\nencrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "label",
+        "kind": 5,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "label = tk.Label(root, text=\"Escoja una opcion\", font=(\"Arial\", 18), fg=\"black\")\nlabel.pack(pady=20)\nencrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "encrypt_button",
+        "kind": 5,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "encrypt_button = tk.Button(root, text=\"Encriptar\", font=(\"Arial\", 14), bg=\"lightblue\", command=abrir_ventana_encriptado)\nencrypt_button.pack(pady=10)\ndecrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()",
+        "detail": "RSA",
+        "documentation": {}
+    },
+    {
+        "label": "decrypt_button",
+        "kind": 5,
+        "importPath": "RSA",
+        "description": "RSA",
+        "peekOfCode": "decrypt_button = tk.Button(root, text=\"Desencriptar\", font=(\"Arial\", 14), bg=\"lightgreen\", command=abrir_ventana_desencriptado)\ndecrypt_button.pack(pady=10)\nroot.mainloop()",
+        "detail": "RSA",
+        "documentation": {}
+    }
+]
